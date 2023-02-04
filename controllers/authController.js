@@ -3,15 +3,7 @@ import bcrypt from 'bcryptjs';
 
 import User from '../models/User.js';
 
-import { generateJWT } from '../helpers/jwt.js';
-
-const handleErrorCatch = (res = response, error) => {
-  console.log('error', error);
-  res.status(500).json({
-    ok: false,
-    msg: 'Por favor hable con el administrador'
-  });
-};
+import { generateJWT, handleErrorCatch } from '../helpers/index.js';
 
 export const createUser = async (req, res = response) => {
   const { name, email, password } = req.body;
