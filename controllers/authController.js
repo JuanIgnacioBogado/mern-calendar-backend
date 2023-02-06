@@ -70,6 +70,8 @@ export const revalidateJWT = async (req, res = response) => {
 
     res.json({
       ok: true,
+      name,
+      uid,
       token
     });
   } catch (error) {
